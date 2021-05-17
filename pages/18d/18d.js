@@ -1,14 +1,24 @@
 // pages/18d/18d.js
+var util = require('../../utils/util.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    statistics_date: util.formatDate(new Date()),
+    station_name: "",
+    passenger: "",
+    revenue: "",
+    pre_sale: "",
+    message: ""
   },
-
-  /**
+  formSubmit: function (e) {
+    console.log(e.detail.value);
+    
+  },
+   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {

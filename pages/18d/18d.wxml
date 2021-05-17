@@ -1,9 +1,10 @@
 <!--pages/18d/18d.wxml-->
-<form>
+<form  bindsubmit="formSubmit">
   <demo-block title="基础信息">
     <van-cell-group>
       <van-field 
         label="部门名称" 
+        name="station_name"
         value="{{ station_name }}" 
         placeholder="请选择部门名称" 
         border="{{ false }}" 
@@ -14,6 +15,7 @@
     <van-cell-group>
       <van-field 
         label="结账日期" 
+        name="statistics_date"
         value="{{ statistics_date }}" 
         placeholder="请选择结账日期" 
         border="{{ false }}" 
@@ -26,6 +28,7 @@
     <van-cell-group>
       <van-field 
         label="发送人" 
+        name="passenger"
         value="{{ passenger }}" 
         type="number"
         placeholder="请输入发送旅客人数（单位：人）" 
@@ -36,7 +39,8 @@
     </van-cell-group>
     <van-cell-group>
       <van-field 
-        label="运输收入" 
+        label="运输收入"
+        name="revenue" 
         value="{{ revenue }}" 
         type="digit"
         placeholder="请输入运输收入（单位：元）" 
@@ -49,7 +53,8 @@
   <demo-block title="备注信息">
     <van-cell-group>
       <van-field 
-        label="明日预测" 
+        label="明日预测"
+        name="pre_sale" 
         value="{{ pre_sale }}" 
         type="number" 
         placeholder="请输入明日预测发送旅客人数（单位：人）" 
@@ -60,7 +65,8 @@
     </van-cell-group>
     <van-cell-group>
       <van-field 
-        label="附加信息" 
+        label="附加信息"
+        name="message" 
         value="{{ message }}" 
         type="textarea" 
         rows="1"
@@ -70,5 +76,8 @@
         clearable 
       />
     </van-cell-group>
+  </demo-block>
+  <demo-block title=" ">
+    <van-button formType="submit" type="info" icon="orders-o" block>提  交</van-button>
   </demo-block>
 </form>
