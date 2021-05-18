@@ -12,8 +12,9 @@ Page({
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
     menuList: [
       {"title": "18点速报入口", "url": "../18d/18d"},
-      {"title": "生产任务完成情况", "url": ""},
-      {"title": "客运设备管理", "url": ""}
+      {"title": "生产任务情况", "url": "../marketing-data/marketing-data"},
+      {"title": "调图数据分析", "url": "../trains-data/trains-data"},
+      {"title": "客运设备浏览", "url": "../devices-data/devices-data"}
     ]
   },
   // 事件处理函数

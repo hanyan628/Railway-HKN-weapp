@@ -2,7 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/18d/18d"
+    "pages/18d/18d",
+    "pages/marketing-data/marketing-data",
+    "pages/trains-data/trains-data",
+    "pages/devices-data/devices-data"
   ],
   "window": {
     "backgroundTextStyle": "light",
