@@ -1,2 +1,14 @@
 <!--pages/trains-data/trains-data.wxml-->
-<text>pages/trains-data/trains-data.wxml</text>
+<demo-block title="trans-data">
+  <van-collapse accordion value="{{ activeNames }}" bind:change="onChange">
+    <van-collapse-item wx:for="{{lines}}" wx:key="name" wx:for-item="line" title="{{line.name}}">
+      <van-cell wx:for="{{line.stations}}" wx:key="station" wx:for-item="station" border="{{false}} center" icon="location-o">
+        <view slot="title">
+          <view class="van-cell-text">{{station}}</view>
+          <van-tag type="danger">{{line.name}}</van-tag>
+          <van-icon slot="right-icon" name="search" class="custom-icon" />
+        </view>
+      </van-cell>
+    </van-collapse-item>
+  </van-collapse>
+</demo-block>
