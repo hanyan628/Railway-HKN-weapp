@@ -1,4 +1,5 @@
 // pages/trains-data/trains-data.js
+var localData = require("../../data/local_data.js")
 Page({
 
   /**
@@ -6,32 +7,7 @@ Page({
    */
   data: {
     activeNames: ['1'],
-    "lines": [
-      {
-        "name": "汉口本站",
-        "stations": [
-          "汉口"
-        ]
-      },
-      {
-        "name": "汉宜客专",
-        "stations": [
-          "汉川", "天门南", "仙桃西", "潜江", "荆州", "枝江北"
-        ]
-      },
-      {
-        "name": "武孝城际",
-        "stations": [
-          "天河机场", "孝感东", "毛陈"
-        ]
-      },
-      {
-        "name": "武仙城际",
-        "stations": [
-          "仙桃"
-        ]
-      },
-    ]
+    "lines": localData.lines
   },
 
   onChange(event) {

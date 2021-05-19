@@ -18,7 +18,7 @@
     </block>
   </view>
 </view>
-<van-divider contentPosition="center" customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;">
+<van-divider contentPosition="center">
   功能菜单
 </van-divider>
 <van-row wx:for="{{menuList}}" wx:key="title" wx:for-item="menu">

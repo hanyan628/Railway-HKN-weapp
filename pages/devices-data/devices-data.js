@@ -1,11 +1,21 @@
 // pages/devices-data/devices-data.js
+var localData = require("../../data/local_data.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    stations: localData.station_overview,
+    devices_kf: localData.device_overview_kf,
+    devices_yd: localData.device_overview_yd,
+    activeNames: ['1'],
+  },
 
+  onChange(event) {
+    this.setData({
+      activeNames: event.detail,
+    });
   },
 
   /**

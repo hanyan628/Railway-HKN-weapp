@@ -1,2 +1,30 @@
 <!--pages/devices-data/devices-data.wxml-->
-<text>pages/devices-data/devices-data.wxml</text>
+<demo-block title="车站简介">
+  <van-collapse accordion value="{{ activeNames }}" bind:change="onChange">
+    <van-collapse-item wx:for="{{stations}}" wx:key="name" wx:for-item="station" title="{{station.name}}" icon="location-o">
+      {{station.desc}}
+    </van-collapse-item>
+  </van-collapse>
+</demo-block>
+<demo-block title="客服设备">
+  <van-collapse accordion value="{{ activeNames }}" bind:change="onChange">
+    <van-collapse-item wx:for="{{devices_kf}}" wx:key="name" wx:for-item="device" title="{{device.name}}"  icon="label-o">
+      <van-row wx:for="{{device.detail}}" wx:key="address" wx:for-item="item">
+        <van-col span="6"></van-col>
+        <van-col span="12">{{item.address}}</van-col>
+        <van-col span="4">{{item.count}}</van-col>
+      </van-row>
+    </van-collapse-item>
+  </van-collapse>
+</demo-block>
+<demo-block title="移动设备">
+  <van-collapse accordion value="{{ activeNames }}" bind:change="onChange">
+    <van-collapse-item wx:for="{{devices_yd}}" wx:key="name" wx:for-item="device" title="{{device.name}}"  icon="bag-o">
+      <van-row wx:for="{{device.detail}}" wx:key="address" wx:for-item="item">
+        <van-col span="6"></van-col>
+        <van-col span="12">{{item.address}}</van-col>
+        <van-col span="4">{{item.count}}</van-col>
+      </van-row>
+    </van-collapse-item>
+  </van-collapse>
+</demo-block>
