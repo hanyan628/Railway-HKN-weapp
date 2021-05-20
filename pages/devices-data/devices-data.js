@@ -9,12 +9,15 @@ Page({
     stations: localData.station_overview,
     devices_kf: localData.device_overview_kf,
     devices_yd: localData.device_overview_yd,
-    activeNames: ['1'],
+    active1: [0],
+    active2: [0],
+    active3: [0],
   },
 
   onChange(event) {
+    const { key } = event.currentTarget.dataset;
     this.setData({
-      activeNames: event.detail,
+      [key]: event.detail,
     });
   },
 
