@@ -1,14 +1,11 @@
 <!--pages/trains-data/trains-data.wxml-->
-<demo-block title="trains-data">
-  <van-collapse accordion value="{{ activeNames }}"  data-key="activeNames"  bind:change="onChange">
+<demo-block title="trains-data 2021/04/10">
+  <van-collapse value="{{ activeNames }}"  data-key="activeNames"  bind:change="onChange">
     <van-collapse-item wx:for="{{lines}}" wx:key="name" wx:for-item="line" title="{{line.name}}">
-      <van-cell wx:for="{{line.stations}}" wx:key="station" wx:for-item="station" border="{{ false }}" value="..." icon="location-o">
-        <view slot="title">
-          <view class="van-cell-text">{{station}}</view>
-          <!--van-tag type="danger">{{line.name}}</van-tag-->
-          <!--van-icon slot="right-icon" name="search" class="custom-icon" /-->
-        </view>
-      </van-cell>
+      {{line.desc}}
+      <van-collapse-item wx:for="{{line.stations}}" wx:key="station" wx:for-item="station" title="{{station.name}}" icon="location-o">
+        {{station.desc}}
+      </van-collapse-item>
     </van-collapse-item>
   </van-collapse>
 </demo-block>

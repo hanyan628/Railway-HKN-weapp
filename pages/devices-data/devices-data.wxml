@@ -6,18 +6,27 @@
     </van-collapse-item>
   </van-collapse>
 </demo-block>
-<demo-block title="客服设备">
+<demo-block title="客运设备">
   <van-collapse accordion value="{{ active2 }}" data-key="active2" bind:change="onChange">
     <van-collapse-item wx:for="{{devices_kf}}" wx:key="name" wx:for-item="device" title="{{device.name}}"  icon="label-o">
-      <van-row wx:for="{{device.detail}}" wx:key="address" wx:for-item="item">
-        <van-col span="6"></van-col>
-        <van-col span="12">{{item.address}}</van-col>
-        <van-col span="4">{{item.count}}</van-col>
+      <van-row gutter="20">
+        <van-col span="6">规格型号</van-col>
+        <van-col span="3">单位</van-col>
+        <van-col span="4">数量</van-col>
+        <van-col span="6">维保费用</van-col>
+        <van-col span="5">备注</van-col>
+      </van-row>
+      <van-row gutter="20" wx:for="{{device.detail}}" wx:key="*this" wx:for-item="item">
+        <van-col span="6">{{ item["规格型号"] }}</van-col>
+        <van-col span="3">{{ item["单位"] }}</van-col>
+        <van-col span="4">{{ item["数量"] }}</van-col>
+        <van-col span="6">{{ item["维保费用"] }}</van-col>
+        <van-col span="5">{{ item["备注"] }}</van-col>
       </van-row>
     </van-collapse-item>
   </van-collapse>
 </demo-block>
-<demo-block title="移动设备">
+<!--demo-block title="移动设备">
   <van-collapse accordion value="{{ active3 }}" data-key="active3" bind:change="onChange">
     <van-collapse-item wx:for="{{devices_yd}}" wx:key="name" wx:for-item="device" title="{{device.name}}"  icon="bag-o">
       <van-row wx:for="{{device.detail}}" wx:key="address" wx:for-item="item">
@@ -27,4 +36,4 @@
       </van-row>
     </van-collapse-item>
   </van-collapse>
-</demo-block>
+</demo-block-->

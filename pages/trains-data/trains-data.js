@@ -11,11 +11,12 @@ Page({
   },
 
   onChange(event) {
+    const { key } = event.currentTarget.dataset;
     this.setData({
-      activeNames: event.detail,
+      [key]: event.detail,
     });
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
