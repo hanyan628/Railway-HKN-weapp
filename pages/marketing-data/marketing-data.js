@@ -1,11 +1,25 @@
 // pages/marketing-data/marketing-data.js
+var data_2019 = require("../../data/2019.js")
+var data_2021 = require("../../data/2021.js")
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    active1: ['1'],
+    active2: ['1'],
+    precise_passenger_2019: data_2019.precise_passenger_2019,
+    precise_revenue_2019: data_2019.precise_revenue_2019,
+    target_passenger_2021: data_2021.target_passenger_2021,
+    tartget_revenue_2021: data_2021.target_passenger_2021
+  },
+  onChange(event) {
+    const { key } = event.currentTarget.dataset;
+    this.setData({
+      [key]: event.detail,
+    });
   },
 
   /**

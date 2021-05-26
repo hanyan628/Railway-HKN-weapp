@@ -1,2 +1,70 @@
 <!--pages/marketing-data/marketing-data.wxml-->
-<text>pages/marketing-data/marketing-data.wxml</text>
+<wxs module="util" src="../../utils/util.wxs"></wxs>
+<demo-block title="2019年精密数">
+  <van-collapse value="{{ active1 }}" data-key="active1" bind:change="onChange">
+    <van-collapse-item title="发送人" value="4896.5万人">
+      <van-row gutter="20">
+        <van-col span="4">月份</van-col>
+        <van-col span="5" style="text-align:center">武孝城际</van-col>
+        <van-col span="5" style="text-align:center">汉宜客专</van-col>
+        <van-col span="5" style="text-align:center">汉口本站</van-col>
+        <van-col span="5" style="text-align:center">小计(万人)</van-col>
+      </van-row>
+      <van-row gutter="20" wx:for="{{precise_passenger_2019}}" wx:key="*this" wx:for-item="item">
+        <van-col span="4">{{ item["月份"] }}</van-col>
+        <van-col span="5" style="text-align:right">{{ util.numberToFixed(item["武孝小计"] / 10000 , 2) }}</van-col>
+        <van-col span="5" style="text-align:right">{{ util.numberToFixed(item["汉宜线小计"] / 10000 ,2) }}</van-col>
+        <van-col span="5" style="text-align:right">{{ util.numberToFixed(item["汉口"] / 10000 ,2) }}</van-col>
+        <van-col span="5" style="text-align:right">{{ util.numberToFixed(item["汉口计"] / 10000 ,2) }}</van-col>
+      </van-row>
+    </van-collapse-item>
+    <van-collapse-item title="运输收入" value="52.3亿元">
+      <van-row gutter="20">
+        <van-col span="4">月份</van-col>
+        <van-col span="5" style="text-align:center">武孝城际</van-col>
+        <van-col span="5" style="text-align:center">汉宜客专</van-col>
+        <van-col span="5" style="text-align:center">汉口本站</van-col>
+        <van-col span="5" style="text-align:center">小计(万元)</van-col>
+      </van-row>
+      <van-row gutter="20" wx:for="{{precise_revenue_2019}}" wx:key="*this" wx:for-item="item">
+        <van-col span="4" style="text-align:center">{{ item["月份"] }}</van-col>
+        <van-col span="5" style="text-align:right">{{ util.numberToFixed(item["武孝小计"] / 10000 , 2) }}</van-col>
+        <van-col span="5" style="text-align:right">{{ util.numberToFixed(item["汉宜线小计"] / 10000 ,2) }}</van-col>
+        <van-col span="5" style="text-align:right">{{ util.numberToFixed(item["汉口"] / 10000 ,2) }}</van-col>
+        <van-col span="5" style="text-align:right">{{ util.numberToFixed(item["汉口计"] / 10000 ,2) }}</van-col>
+      </van-row>
+    </van-collapse-item>
+  </van-collapse>
+</demo-block>
+<demo-block title="2021年奋斗目标">
+  <van-collapse value="{{ active2 }}" data-key="active2" bind:change="onChange">
+    <van-collapse-item title="发送人" value="4262万人">
+      <van-row gutter="10">
+        <van-col span="4" style="text-align:center">月份</van-col>
+        <van-col span="4" style="text-align:center">武仙城际</van-col>
+        <van-col span="4" style="text-align:center">武孝城际</van-col>
+        <van-col span="4" style="text-align:center">汉宜客专</van-col>
+        <van-col span="4" style="text-align:center">汉口本站</van-col>
+        <van-col span="4" style="text-align:center">小计(万人)</van-col>
+      </van-row>
+      <van-row gutter="10" wx:for="{{target_passenger_2021}}" wx:key="*this" wx:for-item="item">
+        <van-col span="4">{{ item["月份"] }}</van-col>
+        <van-col span="4" style="text-align:right">{{ util.numberToFixed(item["仙桃"] ,2) }}</van-col>
+        <van-col span="4" style="text-align:right">{{ util.numberToFixed(item["天河机场"] + item["孝感东"] + item["毛陈"] ,2) }}</van-col>
+        <van-col span="4" style="text-align:right">{{ util.numberToFixed(item["汉川"] + item["天门南"] + item["仙桃西"] + item["潜江"] + item["荆州"] + item["枝江北"] ,2) }}</van-col>
+        <van-col span="4" style="text-align:right">{{ util.numberToFixed(item["汉口本站"] ,2) }}</van-col>
+        <van-col span="4" style="text-align:right">{{ util.numberToFixed(item["全站合计"] ,2) }}</van-col>
+      </van-row>
+    </van-collapse-item>
+    <van-collapse-item title="运输收入" value="47.6亿元">
+      <van-row gutter="10">
+        <van-col span="4" style="text-align:center">月份</van-col>
+        <van-col span="4" style="text-align:center">武仙城际</van-col>
+        <van-col span="4" style="text-align:center">武孝城际</van-col>
+        <van-col span="4" style="text-align:center">汉宜客专</van-col>
+        <van-col span="4" style="text-align:center">汉口本站</van-col>
+        <van-col span="4" style="text-align:center">小计(万元)</van-col>
+      </van-row>
+    </van-collapse-item>
+  </van-collapse>
+</demo-block>

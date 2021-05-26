@@ -9,6 +9,7 @@ Page({
   data: {
     statistics_date: util.formatDate(new Date()),
     station_name: "",
+    operater_name: "",
     passenger: "",
     revenue: "",
     pre_sale: "",
@@ -16,13 +17,22 @@ Page({
   },
   formSubmit: function (e) {
     console.log(e.detail.value);
-    
+    this.setData(e.detail.value);
+    wx.setStorageSync("operater_name", this.operater_name);
+    wx.setStorageSync("station_name", e.detail.value.station_name);
   },
    /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var operater = wx.getStorageSync("operater_name");
+    var station=wx.getStorageSync("station_name");
+    if (operater){
+      this.setData({operater_name: operater});
+    };
+    if (station){
+      this.setData({station_name: station});
+    };
   },
 
   /**
